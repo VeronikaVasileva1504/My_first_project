@@ -1,0 +1,258 @@
+#include <iostream> 
+#include <fstream> 
+#include <string>
+using namespace std;
+#define MAX_PROPERTY 100
+
+
+struct Property {
+	string refNumber;
+	string nameOfBroker;
+	string propertyТype;
+	string areaOfTheProperty;
+	double price;
+	double totalArea; 
+	int numberOfRooms;
+	short floor;
+	string exposition;
+	string status;
+
+};
+struct Agency {
+	string regNumber;
+	Property property[MAX_PROPERTY];
+	 
+};
+
+
+
+// Функция за добавяне на един имот
+void addProperty(Agency property[], int count);
+int main() 
+{
+	setlocale(LC_ALL, "BG");
+	Agency property[MAX_PROPERTY];
+	int propertyCount = 0;
+	int option;
+	char choice = 'n';
+	do {
+
+		system("cls");
+
+		cout << "Добре дошли! Моля изберете опция :" << endl;
+
+		cout << "1. Добавяне на един нов имот. " << endl;
+
+		cout << "2. Добавяне на списъкс имоти." << endl;
+
+		cout << "3. Извеждане на всички имоти на екрана." << endl;
+
+		cout << "4. Извеждане на имоти с най-голяма площ." << endl;
+
+		cout << "5. Извеждане на продадени имоти." << endl;
+
+		cout << "6.  " << endl;
+
+		cout << "7." << endl;
+
+		cout << "8. " << endl;
+
+		cout << "9. " << endl;
+
+		cout << "10." << endl;
+		cin >> option;
+
+		switch (option)
+
+		{
+
+		case 1:
+
+		{
+		  addProperty(property, propertyCount);
+		  system("pause");
+		  break;
+
+		}
+
+		case 2:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 3:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 4:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+		case 5:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 6:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 7:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 8:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+		case 9:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 10:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 11:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+
+		case 12:
+
+		{
+			system("pause");
+
+			break;
+
+		}
+		case 13:
+
+		{
+
+			cout << "Наистина ли желаете да напуснете програмата? \n"
+
+				"Моля натиснете у или друг символ ,за да излезете." << endl;
+
+			cin >> choice;
+
+			if (choice == 'y')
+
+			{
+
+				option = 0;
+
+				cout << "Приятен ден!" << endl;
+
+			}
+
+			break;
+
+		}
+
+		default:
+
+		{
+
+			cout << "Вие избрахте непвалидна опция. Моля ,върнете се в менюто и опитайте пак!" << endl;
+
+			break;
+
+		}
+
+		}
+
+	} while (option != 'y');
+
+	return 0;
+ }
+
+ void addProperty(Property property[], int count)
+ { 
+	 
+	 if(count < MAX_PROPERTY)
+	 {
+
+		 cout << "Mоля,въведете референтният номер на имота:" << endl;
+		 cin>>property[count].refNumber;
+		 
+		 cout << "Mоля,въведете името на брокера на имота:" << endl;
+		 getline(cin>>ws, property[count].nameOfBroker);
+		
+		 cout << "Mоля,въведете типа на имота:" << endl;
+		 getline(cin>>ws, property[count].propertyТype);
+		 
+		 
+		 cout << "Mоля,въведете района, в който се намира имота:" << endl;
+		 cin>>property[count].areaOfTheProperty;
+		
+		 cout << "Mоля,въведете изложението на имота:" << endl;
+		 getline(cin>>ws, property[count].exposition);
+		 cout << "Mоля,въведете цената на имота:" << endl;
+		 cin>>property[count].price;
+		 
+		 cout << "Mоля,въведете общата площ на имота:" << endl;
+		 cin>>property[count].totalArea;
+		 
+		 cout << "Mоля,въведете броя на стаите на имота:" << endl;
+		 cin>>property[count]. numberOfRooms;
+		 
+		 cout << "Mоля,въведете на кой етаж се намира имота:" << endl;
+		 cin>> property[count].floor;
+		 
+		 cout << "Mоля,въведете статуса на имота ( продаден/капариран/свободен):" << endl;
+		 getline(cin>>ws, property[count].exposition);
+
+		 
+		 
+	 }
+	 else
+	 {
+		 cout<< "В тази агенция няма повече места." << endl;
+	 }
+ }
